@@ -1,6 +1,6 @@
 plugins {
     `java-library`
-    id("com.floweytf.paperweight-aw.userdev") version "1.0"
+    id("com.floweytf.paperweight-aw.userdev") version "1.1"
     id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
@@ -58,6 +58,7 @@ tasks {
 
     reobfJar {
         remapperArgs.add("--mixin")
+        finalizedBy("remapAccessWideners")
     }
 
     build {
